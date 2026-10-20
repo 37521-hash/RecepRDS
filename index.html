@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Recepção – Controle de Acesso</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="faixa">Colégio Raphael Di Santo · Recepção</div>
+<header class="topo"><div>
+<img src="assets/logo.png" alt="Logo do Colégio Raphael Di Santo">
+<span><h1>Controle de Acesso</h1></span>
+</div></header>
+<main>
+<div class="stats">
+    <div class="stat"><b id="sDentro">0</b><span>na escola agora</span></div>
+    <div class="stat"><b id="sHoje">0</b><span>registros hoje</span></div>
+    <div class="stat"><b id="sRetirada">0</b><span>retiradas de alunos hoje</span></div>
+  </div>
+
+  <div class="grid">
+    <section class="card">
+      <h2>Nova entrada</h2>
+      <div id="form">
+        <label for="tipo">Tipo</label>
+        <select id="tipo">
+          <option>Visitante</option>
+          <option>Responsável (retirada de aluno)</option>
+          <option>Prestador de serviço</option>
+          <option>Entrega</option>
+        </select>
+        <label for="nome">Nome completo</label>
+        <input id="nome" autocomplete="off">
+        <label for="doc">Documento (RG ou CPF)</label>
+        <input id="doc" autocomplete="off" inputmode="numeric">
+        <div id="boxAluno" class="hide">
+          <label for="aluno">Aluno e turma</label>
+          <input id="aluno" placeholder="Ex.: Ana Souza – 5º B" autocomplete="off">
+        </div>
+        <label for="destino">Destino</label>
+        <select id="destino">
+          <option>Secretaria</option><option>Coordenação</option><option>Direção</option>
+          <option>Financeiro</option><option>Sala de aula</option><option>Outro</option>
+        </select>
+        <button class="pri" id="btnAdd">Registrar entrada</button>
+        <p id="msg" class="sub" role="status"></p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="tabs">
+        <button id="tDentro" aria-pressed="true">Na escola agora</button>
+        <button id="tHist" aria-pressed="false">Histórico de hoje</button>
+      </div>
+      <input id="busca" placeholder="Buscar por nome, aluno ou destino…" aria-label="Buscar">
+      <div id="lista"></div>
+    </section>
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
